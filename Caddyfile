@@ -1,0 +1,18 @@
+https://file.canglin.top:1443 {
+  gzip
+  proxy / http://172.18.18.251:8082 {
+    transparent
+    websocket
+  }
+  tls /caddy/home.crt /caddy/home.key
+}
+
+https://dav.canglin.top:1443 {
+  basicauth / user password
+  webdav / {
+    scope  /davroot
+    modify  true
+    allow  /
+  }
+  tls /caddy/home.crt /caddy/home.key
+}
