@@ -5,7 +5,7 @@ LABEL maintainer="kakotor"
 
 RUN apk add --no-cache openssh-client ca-certificates git wget
 
-RUN wget "https://caddyserver.com/download/linux/amd64?plugins=http.realip,http.cors,http.minify,http.webdav&license=personal&telemetry=off" -O tmp.tar.gz && tar xzf tmp.tar.gz && rm tmp.tar.gz
+RUN wget "https://caddyserver.com/download/linux/amd64?plugins=http.realip,http.cors,http.minify,tls.dns.cloudflare,http.webdav&license=personal&telemetry=off" -O tmp.tar.gz && tar xzf tmp.tar.gz && rm tmp.tar.gz
 
 
 FROM alpine:latest
