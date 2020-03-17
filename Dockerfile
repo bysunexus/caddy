@@ -20,4 +20,6 @@ RUN mkdir /srv/dav/ && /usr/bin/caddy -version && /usr/bin/caddy -plugins
 ENTRYPOINT ["caddy"]
 CMD ["--conf", "/caddy/Caddyfile", "--log", "stdout"]
 VOLUME /caddy /davroot
+ENV CLOUDFLARE_EMAIL="" 
+ENV CLOUDFLARE_API_KEY=""
 EXPOSE 1443
