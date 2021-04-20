@@ -8,7 +8,7 @@ RUN apk add --no-cache nss-tools fail2ban
 
 ARG VERSION
 RUN curl -fsSL "https://caddyserver.com/api/download?os=linux&arch=amd64&p=github.com%2Fmholt%2Fcaddy-webdav" -o "${APP_DIR}/caddy" && \
-    chmod -R u=rwX,go=rX "${APP_DIR}" && \
+    chmod -R 777 "${APP_DIR}" && \
     ln -s "${APP_DIR}/caddy" "/usr/local/bin/caddy" && \
     cp -R /etc/fail2ban "${APP_DIR}/" && \
     rm -rf /etc/fail2ban && \
